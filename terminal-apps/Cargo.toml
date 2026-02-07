@@ -16,3 +16,29 @@ anyhow = "1.0"
 thiserror = "1.0"
 
 [lib]
+name = "warp_terminal_apps"
+path = "src/lib.rs"
+
+[[example]]
+name = "task_manager"
+path = "examples/task_manager.rs"
+
+[[example]]
+name = "build_monitor"
+path = "examples/build_monitor.rs"
+
+[[example]]
+name = "config_manager"
+path = "examples/config_manager.rs"
+
+[[example]]
+name = "main"
+path = "examples/main.rs"
+
+[[example]]
+name = "interactive_cli"
+path = "examples/interactive_cli.rs"
+
+[[example]]
+name = "accessibility_example"
+path = "examples/accessibility_example.rs"
