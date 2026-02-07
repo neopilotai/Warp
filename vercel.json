@@ -1,12 +1,15 @@
 {
   "buildCommand": "bash build.sh",
   "outputDirectory": "target/release",
-  "installCommand": "echo 'Dependencies handled by Cargo'",
+  "installCommand": "apt-get update -qq && apt-get install -y -qq build-essential pkg-config libssl-dev 2>/dev/null || true",
   "framework": null,
   "git": {
     "deploymentEnabled": {
       "main": true
     }
+  },
+  "env": {
+    "CARGO_PROFILE_RELEASE_OPT_LEVEL": "3"
   }
 }
 
