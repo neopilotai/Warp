@@ -1,0 +1,12 @@
+{
+  "buildCommand": "bash build.sh",
+  "outputDirectory": "target/release",
+  "installCommand": "echo 'Dependencies handled by Cargo'",
+  "framework": null,
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
+
