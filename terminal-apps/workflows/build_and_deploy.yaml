@@ -1,0 +1,71 @@
+name: "build_and_deploy"
+description: "Build application and deploy to staging with conditional checks"
+steps:
+  - name: "install_dependencies"
+    workflow: "npm:install"
+    on_success: 
+      - "run_linter"
+    on_failure:
+      - "notify_error"
+
+  - name: "run_linter"
+    workflow: "npm:lint"
+    on_success:
+      - "run_tests"
+    on_failure:
+      - "notify_error"
+
+  - name: "run_tests"
+    workflow: "npm:test"
+    on_success:
+      - "build_production"
+    on_failure:
+      - "notify_error"
+
+  - name: "build_production"
+    workflow: "npm:build"
+    condition:
+      variable: "environment"
+      operator: "equals"
+      value: "production"
+    on_success:
+      - "push_docker_image"
+    on_failure:
+      - "notify_error"
+
+  - name: "push_docker_image"
+    workflow: "docker:push"
+    on_success:
+      - "deploy_staging"
+    on_failure:
+      - "rollback"
+
+  - name: "deploy_staging"
+    workflow: "kubernetes:deploy"
+    on_success:
+      - "run_smoke_tests"
+    on_failure:
+      - "rollback"
+
+  - name: "run_smoke_tests"
+    workflow: "tests:smoke"
+    on_success:
+      - "notify_success"
+    on_failure:
+      - "rollback"
+
+  - name: "notify_error"
+    workflow: "notify:slack:error"
+
+  - name: "notify_success"
+    workflow: "notify:slack:success"
+
+  - name: "rollback"
+    workflow: "kubernetes:rollback"
+    on_success:
+      - "notify_error"
+
+variables:
+  environment: "staging"
+  version: "1.0.0"
+  deployment_timeout: "300"

@@ -1,0 +1,31 @@
+name: "vscode"
+description: "VSCode-style keybindings"
+base: null
+# Editor navigation
+"editor_view:left": "ctrl-b"
+"editor_view:right": "ctrl-f"
+"editor_view:up": "ctrl-p"
+"editor_view:down": "ctrl-n"
+"editor_view:home": "ctrl-a"
+"editor_view:end": "ctrl-e"
+# Editor manipulation
+"editor_view:delete": "ctrl-d"
+"editor_view:backspace": "ctrl-h"
+"editor_view:cut_word_left": "ctrl-w"
+"editor_view:cut_word_right": "meta-d"
+"editor_view:select_left": "shift-left"
+"editor_view:select_right": "shift-right"
+"editor_view:select_all": "ctrl-a"
+# Commands and search
+"workspace:toggle_command_palette": "ctrl-shift-p"
+"workspace:show_command_search": "ctrl-r"
+"find:find_next_occurrence": "ctrl-g"
+"find:find_prev_occurrence": "shift-ctrl-g"
+# Tab management
+"workspace:activate_next_tab": "ctrl-tab"
+"workspace:activate_prev_tab": "shift-ctrl-tab"
+"workspace:close_tab": "ctrl-w"
+# Terminal
+"terminal:copy": "ctrl-c"
+"terminal:paste": "ctrl-v"
+"terminal:find": "ctrl-f"
