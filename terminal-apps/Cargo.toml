@@ -40,5 +40,9 @@ name = "interactive_cli"
 path = "examples/interactive_cli.rs"
 
 [[example]]
+name = "warp_ui"
+path = "examples/warp_ui.rs"
+
+[[example]]
 name = "accessibility_example"
 path = "examples/accessibility_example.rs"
