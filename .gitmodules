@@ -1,5 +1,5 @@
 [submodule "themes"]
-	path = themes
+	path = terminal-apps/themes
 	url = https://github.com/warpdotdev/themes.git
 [submodule "keysets"]
 	path = keysets
