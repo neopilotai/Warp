@@ -7,6 +7,7 @@ pub mod ui;
 pub mod ui_app;
 pub mod universal_input;
 pub mod classic_input;
+pub mod blocks;
 
 pub use app::TerminalApp;
 pub use config_loader::ConfigLoader;
@@ -21,4 +22,8 @@ pub use universal_input::{
 pub use classic_input::{
     AgentMode, AgentRequest, AgentResponse, AgentState, ClassicEditor, ClassicInput, CommandHistory,
     Prompt, PromptStyle, Selection, SelectionMode, TextSelection,
+};
+pub use blocks::{
+    Block, BlockHistory, BlockManager, BlockMetadata, BlockOperation, BlockOperations, BlockOutput,
+    BlockRenderer, BlockStatus, BlockStorage, StorageFormat,
 };
