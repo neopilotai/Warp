@@ -25,8 +25,8 @@ use warp_terminal_apps::{
 let mut app = TerminalApp::new("MyApp");
 
 // 2. Load config
-let themes = ConfigLoader::load_themes_from_directory("themes/")?;
-let keysets = ConfigLoader::load_keysets_from_directory("keysets/")?;
+let themes = ConfigLoader::load_themes_from_directory("terminal-apps/themes/")?;
+let keysets = ConfigLoader::load_keysets_from_directory("terminal-apps/keysets/")?;
 
 // 3. Register
 app.register_themes(themes);

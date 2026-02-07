@@ -25,11 +25,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut app = TerminalApp::new("MyTerminalApp");
     
     // Load themes from directory
-    let themes = ConfigLoader::load_themes_from_directory("themes")?;
+    let themes = ConfigLoader::load_themes_from_directory("terminal-apps/themes")?;
     app.register_themes(themes);
     
     // Load keysets from directory
-    let keysets = ConfigLoader::load_keysets_from_directory("keysets")?;
+    let keysets = ConfigLoader::load_keysets_from_directory("terminal-apps/keysets")?;
     app.register_keysets(keysets);
     
     // Set defaults
@@ -177,19 +177,19 @@ my-app/
 │   ├── ui/
 │   ├── handlers/
 │   └── lib.rs
-├── themes/
-│   ├── dark.yaml
-│   ├── light.yaml
-│   └── custom.yaml
-├── keysets/
-│   ├── vim.yaml
-│   ├── emacs.yaml
-│   └── vscode.yaml
-├── workflows/
-│   ├── build.yaml
-│   ├── deploy.yaml
-│   └── ci.yaml
-└── Cargo.toml
+└── terminal-apps/
+    ├── themes/
+    │   ├── dark.yaml
+    │   ├── light.yaml
+    │   └── custom.yaml
+    ├── keysets/
+    │   ├── vim.yaml
+    │   ├── emacs.yaml
+    │   └── vscode.yaml
+    └── workflows/
+        ├── build.yaml
+        ├── deploy.yaml
+        └── ci.yaml
 ```
 
 ## Common Patterns

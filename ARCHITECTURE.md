@@ -517,7 +517,7 @@ Lock hold times:
 ## Extension Points
 
 ### **1. Custom Theme Creation**
-**How**: Users create YAML files in the `themes/` directory
+**How**: Users create YAML files in the `terminal-apps/themes/` directory
 ```yaml
 name: "my_custom_theme"
 background: "#1e1e1e"
@@ -644,7 +644,7 @@ locale/
 ├─ messages_fr.yaml
 └─ messages_de.yaml
 
-themes/
+terminal-apps/themes/
 ├─ dark_en.yaml
 ├─ dark_es.yaml
 └─ ...

@@ -45,7 +45,7 @@ terminal-apps/
 
 **Example Usage:**
 ```rust
-let theme = ConfigLoader::load_theme("themes/dark.yaml")?;
+let theme = ConfigLoader::load_theme("terminal-apps/themes/dark.yaml")?;
 app.register_theme(theme);
 app.set_theme("dark");
 
@@ -150,7 +150,7 @@ workflow.add_step(step);
 **Usage:**
 ```rust
 let theme = ConfigLoader::load_theme("path/to/theme.yaml")?;
-let themes = ConfigLoader::load_themes_from_directory("themes/")?;
+let themes = ConfigLoader::load_themes_from_directory("terminal-apps/themes/")?;
 let keyset = ConfigLoader::load_keyset("keysets/vim.yaml")?;
 ConfigLoader::save_theme(&theme, "custom_theme.yaml")?;
 ```
