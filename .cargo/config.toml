@@ -1,0 +1,13 @@
+[build]
+# Build for a musl target if possible to avoid C dependencies
+jobs = 2
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+
+[env]
+CARGO_CFG_TARGET_OS = "linux"
+CARGO_CFG_TARGET_ARCH = "x86_64"
